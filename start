@@ -1,4 +1,8 @@
 #!/bin/bash -xe
+# Clear the old docker.pid on restart
+rm -rf /var/run/docker.pid
+sleep 3s
+
 dockerd &
 
 # Wait a little bit for the daemon
