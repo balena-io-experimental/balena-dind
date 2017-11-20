@@ -1,0 +1,14 @@
+#!/bin/bash -xe
+dockerd &
+
+# Wait a little bit for the daemon
+sleep 3s
+
+# Remove unused containers, images and networks
+docker system prune -f
+
+# Start services and clean orphaned containers
+docker-compose up --remove-orphans
+
+# Sleep forever is things fail
+while true; do sleep 10000; done

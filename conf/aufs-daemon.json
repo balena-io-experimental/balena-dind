@@ -1,0 +1,6 @@
+{
+  "storage-driver": "aufs",
+  "graph": "/data",
+  "dns": ["8.8.8.8"],
+  "iptables": false
+}
