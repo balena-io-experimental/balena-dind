@@ -9,6 +9,6 @@ services:
     - redis
 
   redis:
-    image: arm32v7/redis
+    image: i386/redis
 
 

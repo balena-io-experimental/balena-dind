@@ -1,0 +1,19 @@
+FROM i386/ubuntu:17.10
+
+RUN apt-get update && apt-get install -yq \
+    docker.io \
+    docker-compose \
+    module-init-tools \
+    aufs-tools && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# configure the docker daemon
+COPY conf/aufs-daemon.json /etc/docker/daemon.json
+
+# Folder for local builds
+COPY services /usr/src/app/services
+WORKDIR /usr/src/app
+
+COPY start .
+COPY docker-compose.yml .
+CMD ["bash", "start"]
