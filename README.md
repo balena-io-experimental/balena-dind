@@ -4,6 +4,6 @@ This project demonstrates how to run docker-in-docker on a fleet of resin.io dev
 
 ### Important Notes:
 
-* The daemon.json for docker should always define the default `dns` and `iptables=false`, if you change this, there is a good change you can break the dns resolution on the hostOS and your device won't be able to connect to resin.io anymore and will stop receiving updates.
+* The daemon.json for docker should always define the default `dns` and `iptables=false`, if you change this, there is a good chance you can break the dns resolution on the hostOS and your device won't be able to connect to resin.io anymore and will stop receiving updates.
 * The docker daemon inside the resin.io container will need to use the correct storage driver. For raspberry pi 3, this is AUFS, for other boards like the Nvidia TX2, it will use overlay2. You can see this is their respective `daemon.json` files.
 * The docker daemon you start in the container, will use the `/data` data partition to store its images. On the initial deployment, the device will need to pull those images and build them. If you purge `/data` for this device, all the docker images will be removed.
