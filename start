@@ -13,7 +13,7 @@ sleep 3s
 docker system prune -f
 
 # Start services and clean orphaned containers
-docker-compose up --remove-orphans
+docker-compose -f dind-compose.yml up --remove-orphans
 
 # Sleep forever is things fail
 while true; do sleep 10000; done
