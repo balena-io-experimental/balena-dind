@@ -1,5 +1,8 @@
 ## Docker-in-Docker example project for resin.io
 
+*Note: Multicontainer applications are now supported as a core feature of the resin.io platform. To learn more, 
+check out the [blog post](https://resin.io/blog/multicontainer-on-resin-io-is-here/), [sample multicontainer project](https://github.com/resin-io-projects/multicontainer-getting-started), and [docs](https://docs.resin.io/learn/develop/multicontainer/).*
+
 This project demonstrates how to run docker-in-docker on a fleet of resin.io devices, allowing one to use docker-compose to bring up a composition of containers. In this example, define two container services, a python webserver and a redis store. The Python web server service has its 5000 port mapped port 80 of the hostOS, so one can see the webserver on the deviceURL.
 
 ### Important Notes:
